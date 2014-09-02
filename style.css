@@ -1,0 +1,29 @@
+/*
+.color-primary-0 { color: #2D882D }	 Main Primary color 
+.color-primary-1 { color: #57CD57 }
+.color-primary-2 { color: #41AB41 }
+.color-primary-3 { color: #1D651D }
+.color-primary-4 { color: #104310 }
+*/
+
+.strike {
+    text-decoration: line-through;
+}
+
+h1, p, * {
+    font-family: Open Sans, sans-serif;
+    color: #000;
+}
+
+h1, h1 span {
+    color: #A87B50;
+    font-family: Ubuntu, sans-serif;
+}
+
+.gen {
+    max-width: 95%;
+}
+
+body {
+    background-color: #E6D9C8;
+}
