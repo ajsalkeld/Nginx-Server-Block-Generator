@@ -20,7 +20,7 @@ body {
     background-color: #2F72FF;
 }
 
-input {
+input, textarea {
     color: black;
 }
 
