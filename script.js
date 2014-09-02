@@ -3,6 +3,7 @@
 window.onload = function() {
     togglePHP(this.checked);
     toggleSSL(this.checked);
+    var phpHttps = 'off';
 }
 
 function togglePHP(_checked) {
@@ -23,6 +24,12 @@ function getValue() {
 }
 
 function generate() {
+    // Define phpHttps
+    if (document.getElementById('ssl').checked) {
+        phpHttps = 'on';
+    } else {
+        phpHttps = 'off';
+    }
     // Define phpValue
     if (document.getElementById('php').checked) {
         phpValue = '  location ~ \.php(/|$) {\n' +
@@ -30,7 +37,7 @@ function generate() {
         '    fastcgi_split_path_info ^(.+\.php)(/.*)$;\n' +
         '    include fastcgi_params;\n' +
         '    fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;\n' +
-        '    fastcgi_param  HTTPS              off;\n' +
+        '    fastcgi_param  HTTPS              ' + phpHttps + ';\n' +
         '  }\n';
     } else {
         phpValue = '';
