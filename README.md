@@ -10,7 +10,8 @@ Fill out the form and click 'Submit'. The script then generates a server config 
 TODO:
 -----
 
-* Make page pretty
+* Make page pretty - 1/2 completed
+* Add SSL option
 * Anything else I think of/is suggested.
 
 Contributing
