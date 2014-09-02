@@ -1,9 +1,9 @@
-Nginx-Server-Config-Generator
+Nginx Server Block Generator
 =============================
 
 Use: [tools.ajs.pw](http://tools.ajs.pw)
 
-A Javascript webpage to generate a server config for Nginx.
+A Javascript webpage to generate a server block for Nginx.
 
 Fill out the form and click 'Submit'. The script then generates a server config file for use in either nginx.conf (as server{}) or in a virtual host file.
 
