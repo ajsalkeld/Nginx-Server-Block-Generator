@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
+        <title>Nginx Server Config Generator</title>
+    </head>
+    <body>
+        <h1 class="title">The Nginx Server Config Generator <span class="strike">Of Doom!</span></h1>
+        <p class="howto">Fill out form below and then click "Generate". Pretty simple, huh?</p>
+        <form class="form">
+            Listen to which port: <input type="text" id="listen" name="listen" value="80"><br>
+            Server name (domain name): <input type="text" name="servername" id="servername" value="*"><br>
+            Root directory: <input type="text" name="root" value="/var/www"><br>
+            Index: <input type="text" id="index" name="index" value="index.html"><br>
+            Enable PHP? <input type="checkbox" id="php" name="php" value="yes" onchange="togglePHP(this.checked)"><br>
+            PHP Socket: <input type="text" id="php-socket" name="php-socket" value="127.0.0.1:9000"><br>
+            Block image leeching? <input type="checkbox" id="leech" name="leech" value="yes"><br>
+        </form>
+    </body>
+</html>

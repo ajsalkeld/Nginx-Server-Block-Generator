@@ -1,0 +1,11 @@
+.strike {
+    text-decoration: line-through;
+}
+
+h1, p, * {
+    font-family: sans-serif;
+}
+
+.form div {
+    display: block;
+}
