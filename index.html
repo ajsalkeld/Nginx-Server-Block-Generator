@@ -1,28 +1,29 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src="script.js"></script>
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open-Sans:regular,bold&subset=Latin">
-<title>Nginx Server Block Generator</title>
-</head>
-<body>
-<a href="https://github.com/AJ5/Nginx-Server-Block-Generator"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-<h1 class="title">The Nginx Server Block Generator <span class="strike">Of Doom!</span></h1>
-<p class="howto">Fill out form below and then click "Generate". Pretty simple, huh?</p>
-<form class="form" onsubmit="return getValue();">
-Listen to which port: <input type="text" id="listen" name="listen" value="80"><br>
-Server name (domain name): <input type="text" name="servername" id="servername" value="*"><br>
-Root directory: <input type="text" name="root" value="/var/www" id="root"><br>
-Index: <input type="text" id="index" name="index" value="index.html"><br>
-Enable PHP? <input type="checkbox" id="php" name="php" value="yes" onchange="togglePHP(this.checked)"><br>
-PHP Socket: <input type="text" id="php-socket" name="php-socket" value="127.0.0.1:9000"><br>
-Block image leeching? <input type="checkbox" id="leech" name="leech" value="yes"><br>
-Enable Wordpress pretty permalinks? <input type="checkbox" id="wp" name="wp" value="yes"><br>
-<input type="submit" value="Submit" id="submit" name="submit">
-</form>
-<p class="gentitle">Generated server config:</p>
-<textarea rows="15" cols="140" id="gen"></textarea>
-</body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open-Sans:regular,bold&subset=Latin">
+    <title>Nginx Server Block Generator</title>
+  </head>
+  <body>
+    <a href="https://github.com/AJ5/Nginx-Server-Block-Generator"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <h1 class="title">The Nginx Server Block Generator <span class="strike">Of Doom!</span></h1>
+    <p class="howto">Fill out form below and then click "Generate". Pretty simple, huh?</p>
+    <form class="form" onsubmit="return getValue();">
+    Listen to which port: <input type="text" id="listen" name="listen" value="80"><br>
+    Server name (domain name): <input type="text" name="servername" id="servername" value="*"><br>
+    Root directory: <input type="text" name="root" value="/var/www" id="root"><br>
+    Index: <input type="text" id="index" name="index" value="index.html"><br>
+    Enable PHP? <input type="checkbox" id="php" name="php" value="yes" onchange="togglePHP(this.checked)"><br>
+    PHP Socket: <input type="text" id="php-socket" name="php-socket" value="127.0.0.1:9000"><br>
+    Block image leeching? <input type="checkbox" id="leech" name="leech" value="yes"><br>
+    Enable Wordpress pretty permalinks? <input type="checkbox" id="wp" name="wp" value="yes"><br>
+    <input type="submit" value="Submit" id="submit" name="submit">
+    </form>
+    <p class="gentitle">Generated server config:</p>
+    <textarea rows="15" cols="140" id="gen"></textarea>
+    <p class="gendesc">Place this into your nginx.conf file in place of the server { } block, or into a virtualhost file.
+  </body>
 </html>
