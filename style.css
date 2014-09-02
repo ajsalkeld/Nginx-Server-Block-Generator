@@ -12,11 +12,11 @@
 
 h1, p, * {
     font-family: Open Sans, sans-serif;
-    color: #000;
+    color: #fff;
 }
 
 h1, h1 span {
-    color: #A87B50;
+    color: #fff;
     font-family: Ubuntu, sans-serif;
 }
 
@@ -25,5 +25,35 @@ h1, h1 span {
 }
 
 body {
-    background-color: #E6D9C8;
+    background-color: #2F72FF;
+}
+
+input {
+    color: black;
+}
+
+input[type="text"][disabled] {
+   background-color: grey;
+}
+
+.pageinner {
+    max-width: 70%;
+    background-color: #0040FF;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+    padding-top: 0px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+textarea {
+    max-width: 99.5%;
 }
