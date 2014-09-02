@@ -19,6 +19,9 @@
                 Index: <input type="text" id="index" name="index" value="index.html"><br>
                 Enable PHP? <input type="checkbox" id="php" name="php" value="yes" onchange="togglePHP(this.checked)"><br>
                 PHP Socket: <input type="text" id="php-socket" name="php-socket" value="127.0.0.1:9000"><br>
+                Enable SSL? <input type="checkbox" id="ssl" name="ssl" value="yes" onchange="toggleSSL(this.checked)"><br>
+                SSL certificate location: <input type="text" name="sslcert" value="/etc/ssl/example.com.crt" id="sslcert"><br>
+                SSL certificate key location: <input type="text" name="sslkey" value="/etc/ssl/example.com.key" id="sslkey"><br>
                 Block image leeching? <input type="checkbox" id="leech" name="leech" value="yes"><br>
                 Enable Wordpress pretty permalinks? <input type="checkbox" id="wp" name="wp" value="yes"><br>
                 <input type="submit" value="Submit" id="submit" name="submit">

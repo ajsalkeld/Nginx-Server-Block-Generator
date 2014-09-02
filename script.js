@@ -2,16 +2,23 @@
 // Licensed under GPL v2 (read LICENSE.txt)
 window.onload = function() {
     togglePHP(this.checked);
+    toggleSSL(this.checked);
 }
 
 function togglePHP(_checked) {
     document.getElementById('php-socket').disabled = _checked ? false : true;
 }
 
+function toggleSSL(_checked) {
+    document.getElementById('sslcert').disabled = _checked ? false : true;
+    document.getElementById('sslkey').disabled = _checked ? false : true;
+}
+
 function getValue() {
     var phpValue;
     var leechingValue;
     var wpLinkValue;
+    var sslValue;
     return generate();
 }
 
@@ -53,11 +60,19 @@ function generate() {
     } else {
         wpLinkValue = '';
     }
+    // define sslValue
+    if (document.getElementById('ssl').checked) {
+        sslValue = '  ssl    on;\n' +
+        '  ssl_certificate    ' + document.getElementById('sslcert').value + ';\n' +
+        '  ssl_certificate_key    ' + document.getElementById('sslkey').value + ';\n';
+    } else {
+        sslValue = '';
+    }
     // Generate in textarea
      document.getElementById("gen").innerHTML = 'server {\n' +
             '  listen ' + document.getElementById('listen').value + ';\n' +
             '  server_name ' + document.getElementById('servername').value + 
-            ';\n' +
+            ';\n' + sslValue +
             '  root ' + document.getElementById('root').value + ';\n' +
             '  location / {\n' +
             '    index ' + document.getElementById('index').value +';\n' +
