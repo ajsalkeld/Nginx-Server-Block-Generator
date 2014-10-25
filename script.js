@@ -1,4 +1,4 @@
-// (c) AJ Salkeld
+// (c) AJ Salkeld 2014
 // Licensed under GPL v2 (read LICENSE.txt)
 window.onload = function() {
     togglePHP(this.checked);
@@ -55,7 +55,8 @@ function generate() {
         '    }\n' +
         '    if ($testref = IG){\n' +
         '      return 444;\n' +
-        '    }\n';
+        '    }\n' +
+        '  }\n';
     } else {
         leechingValue = '';
     }
