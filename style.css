@@ -49,3 +49,5 @@ input[type="text"][disabled] {
 textarea {
     max-width: 99.5%;
 }
+
+label.pointer{cursor:pointer;}
