@@ -34,4 +34,4 @@ Code is messy and the web page is ugly, but hey-ho it works. Any problems you ex
 Contributing
 -------------
 
-Feel free to add code/translations, and then make a pull request. I suggest you ask (by emailing [contact@ajs.pw](mailto:contact@ajs.pw)) before setting off on a wild adventure, because turning code down after umpteen hours of creation isn't nice. 
+Feel free to add code and fix my mess, and then make a pull request. Shoutout to (jartaud)[https://github.com/jartaud] for doing just so.
