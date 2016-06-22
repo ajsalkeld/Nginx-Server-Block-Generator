@@ -34,4 +34,4 @@ Code is messy and the web page is ugly, but hey-ho it works. Any problems you ex
 Contributing
 -------------
 
-Feel free to add code and fix my mess, and then make a pull request. Shoutout to (jartaud)[https://github.com/jartaud] for doing just so.
+Feel free to add code and fix my mess, and then make a pull request. Shoutout to [jartaud](https://github.com/jartaud) for doing just so.
