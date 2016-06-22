@@ -1,5 +1,5 @@
-// (c) AJ Salkeld 2014
-// Licensed under GPL v2 (read LICENSE.txt)
+// (c) AJ Salkeld 2016
+// Licensed under the MIT License (read LICENSE.md)
 window.onload = function() {
     togglePHP(this.checked);
     toggleSSL(this.checked);
