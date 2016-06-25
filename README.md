@@ -1,7 +1,7 @@
 Nginx Server Block Generator
 =============================
 
-Use: [tools.ajs.pw](http://tools.ajs.pw)
+Use: [tools.ajsalkeld.com](http://tools.ajsalkeld.com)
 
 A Javascript webpage to generate a server config for Nginx.
 
