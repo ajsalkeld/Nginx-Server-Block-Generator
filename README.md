@@ -22,14 +22,14 @@ Current options
 TODO:
 -----
 
-* Make page pretty - 1/2 completed
+* Add IPv6
 * Add more advanced SSL options
 * Anything else I think of/is suggested.
 
 Known problems
 --------------
 
-Code is messy and the web page is ugly, but hey-ho it works. Any problems you experience, please report the issue!
+Code is a wee bit messy, but hey-ho it works. Any problems you experience, please report the issue!
 
 Contributing
 -------------
