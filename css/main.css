@@ -47,9 +47,25 @@ input[type=text] {
 	box-sizing: border-box;
 }
 
+input[type="submit"] {
+	border: 2px solid #477DCA;
+	border-radius: 0;
+	background-color: #477DCA;
+	color: #FFF;
+	font-size: 1.5em !important;
+	padding: 0.25em 0.5em;
+	text-align: center;
+}
+
+div.submit-wrap {
+	text-align: center;
+	margin: 1em;
+}
+
 textarea {
 	resize: none;
 	border: 2px solid #477DCA;
+	width: 100%;
 }
 
 main {
