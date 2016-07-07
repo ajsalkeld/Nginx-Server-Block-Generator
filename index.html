@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>tools.AJSalkeld</title>
+		<title>Nginx Server Block Generator - tools.AJSalkeld</title>
 		<meta name="description" content="Tools by AJSalkeld and the GitHub community.">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/print.css" media="print">
@@ -55,7 +55,9 @@
 					<label for="sslkey">SSL certificate key location:</label> <input type="text" name="sslkey" value="/etc/ssl/example.com.key" id="sslkey"><br>
 					<label for="leech" class="pointer">Block image leeching?</label>&nbsp;<input type="checkbox" id="leech" name="leech" value="yes"><br>
 					<label for="wp" class="pointer">Enable Wordpress pretty permalinks?</label>&nbsp;<input type="checkbox" id="wp" name="wp" value="yes"><br>
-					<input type="submit" value="Submit" id="submit" name="submit">
+					<div class="submit-wrap">
+						<input type="submit" value="Just Do It!" id="submit" name="submit">
+					</div>
 				</form>
 				<textarea rows="15" cols="140" id="gen"></textarea>
 			</main>
