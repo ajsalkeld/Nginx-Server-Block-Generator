@@ -1,33 +1,96 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="script.js"></script>
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open-Sans:regular,bold&subset=Latin">
-        <title>Nginx Server Block Generator</title>
-    </head>
-    <body>
-        <a href="https://github.com/AJ5/Nginx-Server-Block-Generator"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-        <div class="pageinner">
-            <h1 class="title">The Nginx Server Block Generator <span class="strike">Of Doom!</span></h1>
-            <p class="howto">Fill out form below and then click "Generate". Pretty simple, huh?</p>
-            <form class="form" onsubmit="return getValue();">
-                Listen to which port: <input type="text" id="listen" name="listen" value="80"><br>
-                Server name (domain name): <input type="text" name="servername" id="servername" value="*"><br>
-                Root directory: <input type="text" name="root" value="/var/www" id="root"><br>
-                Index: <input type="text" id="index" name="index" value="index.html"><br>
-                <label for="php" class="pointer">Enable PHP?</label>&nbsp;<input type="checkbox" id="php" name="php" value="yes" onchange="togglePHP(this.checked)"><br>
-                PHP Socket: <input type="text" id="php-socket" name="php-socket" value="127.0.0.1:9000"><br>
-                <label for="ssl" class="pointer">Enable SSL?</label>&nbsp;<input type="checkbox" id="ssl" name="ssl" value="yes" onchange="toggleSSL(this.checked)"><br>
-                SSL certificate location: <input type="text" name="sslcert" value="/etc/ssl/example.com.crt" id="sslcert"><br>
-                SSL certificate key location: <input type="text" name="sslkey" value="/etc/ssl/example.com.key" id="sslkey"><br>
-                <label for="leech" class="pointer">Block image leeching?</label>&nbsp;<input type="checkbox" id="leech" name="leech" value="yes"><br>
-                <label for="wp" class="pointer">Enable Wordpress pretty permalinks?</label>&nbsp;<input type="checkbox" id="wp" name="wp" value="yes"><br>
-                <input type="submit" value="Submit" id="submit" name="submit">
-            </form>
-            <p class="gentitle">Generated server config:</p>
-            <textarea rows="15" cols="140" id="gen"></textarea>
-        </div>
-    </body>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>tools.AJSalkeld</title>
+		<meta name="description" content="Tools by AJSalkeld and the GitHub community.">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/print.css" media="print">
+		<link rel="canonical" href="https://tools.ajsalkeld.com">
+		<script src="https://use.fontawesome.com/b6d5746890.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat" rel="stylesheet">
+		<script type="text/javascript" src="js/combined.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script type="text/javascript" src="js/cookie-bar.js" defer></script>
+		<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="site-header">
+    			<a class="site-title" href="https://tools.ajsalkeld.com" title="Homepage"><span aria-hidden="true" class="fa fa-wrench title-icon"></span>tools.ajsalkeld.com</a><span aria-hidden="true" class="fa fa-code title-icon fa-3x"></span>
+			</header>
+			<main class="page-content">
+				<a href=""><h1 class="title"><span class="fa fw fa-cog fa-spin post-icon"></span> Nginx Server Block Generator</h1></a>
+				<p>A tool to generate you Nginx Server Block (the bit that goes in a file in /sites-enabled/).</p>
+				<h2><span style="text-decoration: line-through;">In</span>Destructions:</h2>
+				<p>Fill in the form below, and hit the big button at the bottom. Then, copy the generated text into a file in /sites-enabled/.</p>
+				<form class="form" onsubmit="return getValue();">
+					<label for="listen">Listen to which port:</label> <input type="text" id="listen" name="listen" value="80"><br>
+					<label for="servername">Server name (domain name):</label> <input type="text" name="servername" id="servername" value="*"><br>
+					<label for="root">Root directory:</label> <input type="text" name="root" value="/var/www" id="root"><br>
+					<label for="index">Index:</label> <input type="text" id="index" name="index" value="index.html"><br>
+					<label for="php" class="pointer">Enable PHP?</label>&nbsp;<input type="checkbox" id="php" name="php" value="yes" onchange="togglePHP(this.checked)"><br>
+					<label for="php-socket">PHP Socket:</label> <input type="text" id="php-socket" name="php-socket" value="127.0.0.1:9000"><br>
+					<label for="ssl" class="pointer">Enable SSL?</label>&nbsp;<input type="checkbox" id="ssl" name="ssl" value="yes" onchange="toggleSSL(this.checked)"><br>
+					<label for="sslcert">SSL certificate location:</label> <input type="text" name="sslcert" value="/etc/ssl/example.com.crt" id="sslcert"><br>
+					<label for="sslkey">SSL certificate key location:</label> <input type="text" name="sslkey" value="/etc/ssl/example.com.key" id="sslkey"><br>
+					<label for="leech" class="pointer">Block image leeching?</label>&nbsp;<input type="checkbox" id="leech" name="leech" value="yes"><br>
+					<label for="wp" class="pointer">Enable Wordpress pretty permalinks?</label>&nbsp;<input type="checkbox" id="wp" name="wp" value="yes"><br>
+					<input type="submit" value="Submit" id="submit" name="submit">
+				</form>
+				<textarea rows="15" cols="140" id="gen"></textarea>
+			</main>
+			<footer>
+				<div class="container-fluid">
+					<div class="row">
+						<nav class="lower-nav col-sm-5">
+							<ul>
+								<li><a href="/bio/" title="bio">Bio</a></li>
+								<li><a href="https://www.flickr.com/photos/ajsalkeld/" title="Flickr">Photo</a></li>
+								<li><a href="https://dankinfographics.com" title="Dank Infographics">Graphics</a></li>
+							</ul>
+							<p class="copyright"><span aria-hidden="true" class="fa fa-copyright fa-fw"></span> Copyright Andrew (AJ) Salkeld 2016.</p>
+						</nav>
+						<nav class="social col-sm-3">
+							<ul>
+								<li><a href="https://twitter.com/ajsalkeld" title="Twitter"><span aria-hidden="true" class="fa fa-twitter fa-fw fa-2x"></span></a></li>
+								<li><a href="https://github.com/ajsalkeld" title="GitHub"><span aria-hidden="true" class="fa fa-github fa-fw fa-2x"></span></a></li>
+								<li><a href="https://www.flickr.com/photos/ajsalkeld/" title="Flickr"><span aria-hidden="true" class="fa fa-flickr fa-fw fa-2x"></span></a></li>
+							</ul>
+						</nav>
+						<nav class="powered col-sm-4">
+							<ul>
+								<li><span aria-hidden="true" class="fa fa-code-fork fa-fw"></span>Fork me on <a href="https://github.com/ajsalkeld/tools.ajsalkeld.com" title="GitHub">GitHub</a>.</li>
+								<li><span aria-hidden="true" class="fa fa-industry fa-fw"></span>Powered by <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a>.</li>
+								<li><span aria-hidden="true" class="fa fa-cloud fa-fw"></span>Hosted by <a href="https://m.do.co/c/f5bc53fba133" title="Digital Ocean">Digital Ocean</a>.</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</footer>
+			<script>//$("header").flowtype({minimum:200,maximum:1200,minFont:7,maxFont:24,fontRatio:30});
+				$("main").flowtype({minimum:200,maximum:1200,minFont:14,maxFont:20,fontRatio:30});
+				//$("footer").flowtype({minimum:100,maximum:1200,minFont:8,maxFont:20,fontRatio:30});
+				$(document).ready(function(){$.cookieBar({message:"I eat cookies.",acceptButton:!0,acceptText:"Nom nom nom!",acceptOnContinue:"true",acceptOnScroll:"true"/*,policyButton:!0,policyText:"So what?",policyURL:"/privacy/"*/})});</script>
+		</div>
+	</body>
 </html>
