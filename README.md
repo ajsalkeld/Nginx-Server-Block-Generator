@@ -1,7 +1,7 @@
 Nginx Server Block Generator
 =============================
 
-Use on [ajsalkeld.com](https://www.ajsalkeld.com/tools/nginx-server-block-generator/ "Use the Nginx Server Block Generator"), or [read more about it](https://www.ajsalkeld.com/blog/project/2016/07/05/nginx-server-block-generator/ "Read about Nginx Server Block Generator").
+Use on [GitHub pages](http://ajsalkeld.github.io/Nginx-Server-Block-Generator/ "Use the Nginx Server Block Generator"), or [read more about it](https://www.ajsalkeld.com/blog/project/2016/07/05/nginx-server-block-generator/ "Read about Nginx Server Block Generator").
 
 A Javascript webpage to generate a server config for Nginx.
 
